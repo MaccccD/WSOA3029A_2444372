@@ -1,14 +1,27 @@
-*{
- background-color: black;
- font-family: 'Times New Roman', Times, serif;
- 
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px; 
 }
-.description{
+
+nav {
+    display: flex; 
+    justify-content: flex-end;
+}
+
+* {
+    background-color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.description {
     color: white;
 }
-.Description-text{
+
+.Description-text {
     color: white;
 }
-.index{
+
+.index {
     color: green;
 }

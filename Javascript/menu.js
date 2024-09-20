@@ -47,7 +47,7 @@ export function initialise(currentPage) {
     const style = document.createElement("style");//adding the CSS element here to "style" the way my navigation row spacially look like with each other
     style.textContent = `
     td {
-        padding: 25px; 
+        padding: 20px; 
         text-align: right;
     }
     a{
