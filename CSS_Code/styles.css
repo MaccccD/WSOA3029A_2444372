@@ -1,11 +1,17 @@
 header {
     display: flex;
-    justify-content: flex-end;
-    padding: 15px; 
+    justify-content: space-between; /* here im ensurring that  logo is on the left, nav on the right */
+    align-items: center; 
+    padding: 10px;
+}
+
+#Logo {
+    display: flex;
+    align-items: center;
 }
 
 nav {
-    display: flex; 
+    display: flex;
     justify-content: flex-end;
 }
 
@@ -25,3 +31,4 @@ nav {
 .index {
     color: green;
 }
+
