@@ -19,7 +19,16 @@ function handleMouseOut(event) {//converts back to lover case using the event ta
 }
 function toggleMenu(){ //this function is to toggle the menu to activate or open each time the hamburger menu item is clicked
     const nav = document.querySelector("header > nav");
-    nav.classList.toggle("open")
+    const hamburgerIcon = document.getElementById("hamburger").querySelector("ion-icon");
+ //show the menu hamburger icon
+    nav.classList.toggle("open");
+
+    // Change icon between hamburger and close ("X")
+    if (nav.classList.contains("open")) {
+        hamburgerIcon.setAttribute("name", "close-outline"); // Switch to "X" icon
+    } else {
+        hamburgerIcon.setAttribute("name", "menu-outline"); // Switch back to hamburger icon
+    }
 }
 
 
@@ -58,6 +67,12 @@ export function initialise(currentPage) {
     }
 `  
     document.head.appendChild(style);//appending the style elements to the overall webpage of the whole site
+
+     // Attach the toggle functionality to the hamburger icon
+     const hamburger = document.getElementById("hamburger");
+     hamburger.addEventListener("click", toggleMenu);
+     console.log("the icon is showing");
+
     console.log("Menu is workingggg broooo!");//for my own piece of mind , i have this showing to prove its working .
 };
 
