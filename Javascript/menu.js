@@ -1,12 +1,12 @@
 const root = "/WSOA3029A_2444372";
 const menuItemss = [
     { name: "Home", href:  root + "/index.html"},
+    { name: "About", href: `${root}/About/About.html`},
     { name: "Design", href: `${root}/Design/Design.html`},
     { name: "StylesGuide", href: `${root}/Design/StyleGuide.html`},
     { name: "Theory", href: `${root}/Theory/Insights.html`},
     { name: "Phishing", href: `${root}/Visualizations/Phishing.html`},
     { name: "Ransomware", href: `${root}/Visualizations/Ransomware.html`},
-    { name: "Statistics", href: `${root}/Statistics/Stats.html`}
 ];
 
 // i added my hovering functionality here so that when users hover over the navigation links it converys them to uppercase
