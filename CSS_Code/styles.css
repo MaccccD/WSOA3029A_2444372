@@ -3,6 +3,7 @@ header {
     justify-content: space-between; /* here im ensurring that  logo is on the left, nav on the right */
     align-items: center; 
     padding: 10px;
+   
 }
 
 #Logo {
