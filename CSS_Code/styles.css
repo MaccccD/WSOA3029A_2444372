@@ -24,6 +24,12 @@ nav {
 .description {
     color: white;
 }
+.heading {
+    color: white;
+}
+.section {
+    color: white;
+}
 
 .Description-text {
     color: white;
@@ -31,6 +37,7 @@ nav {
 
 .index {
     color: green;
+    border: white;
 }
 
 /* styles for the menu and hamburger icon */
