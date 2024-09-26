@@ -5,6 +5,20 @@ header {
     padding: 10px;
    
 }
+.low {
+    display: flex; /* Using a flexbox to align the images side by side */
+    flex-wrap: wrap; 
+    gap: 40px;
+   
+}
+figure {
+    margin: 0; 
+}
+
+.next {
+    display: block; 
+    padding: 0; 
+}
 
 #Logo {
     display: flex;
