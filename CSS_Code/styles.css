@@ -38,7 +38,12 @@ nav {
     background-color: black;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+.Welcome {
+    color: white;
+    justify-content: center;
+    display: flex;
+    padding: 100px;
+}
 .description {
     color: white;
 }
