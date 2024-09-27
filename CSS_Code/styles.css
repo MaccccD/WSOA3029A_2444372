@@ -14,6 +14,10 @@ header {
 figure {
     margin: 0; 
 }
+.btn {
+    background-color: yellow;
+    border: 300px;
+}
 
 .next {
     display: block; 
