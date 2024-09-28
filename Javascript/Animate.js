@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const h1 = document.querySelector(".Welcome");
+    const h1 = document.querySelector("h1.Welcome");
     if(!h1){
         console.error("no h1 tag found on sighhht, plsss check if you have the tagg");
         return;
     }//loading the html content first so that it parses and then the h1 tag can be found before the the rest of the code beloew executes 
 
-const headertxt = " Welcome to the Hacking World";
+const headertxt = "";
 let  index = 0;//initialising the first letter as index 0
 
 //creating a cool animation where when user hover over the words to dosplay above, the words react by turning intp the shape i have set below
