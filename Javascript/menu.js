@@ -16,6 +16,7 @@ function handleMouseOver(event) {
 
 function handleMouseOut(event) {//converts back to lover case using the event target where the mouse will be
     event.target.innerText = event.target.innerText.toLowerCase();
+    
 }
 function toggleMenu(){ //this function is to toggle the menu to activate or open each time the hamburger menu item is clicked
     const nav = document.querySelector("header > nav");
@@ -42,7 +43,12 @@ export function initialise(currentPage) {
         const a = document.createElement("a");
         a.innerText = menuItem.name;
         a.setAttribute("href", menuItem.href);
-        if (currentPage != menuItem.name) { //keeping the same functionality even when the page is not home page but the hovieirng will stilll work if we calll the function and add eevent listeners here
+
+
+        if (window.location.pathname.includes(menuItem.href)) { // if the url of the current window matches the url of the menu Item , the color should change to green 
+            a.style.color = "limegreen"; // Set the active page link to green
+        } else {
+            a.style.color = "white"; // Default color for other links
             a.addEventListener("mouseover", handleMouseOver);
             a.addEventListener("mouseout", handleMouseOut);
         }
@@ -59,11 +65,8 @@ export function initialise(currentPage) {
         padding: 20px; 
         text-align: right;
     }
-    a{
-        color: White;
-    }
     a:hover{
-        color: limegreen;
+        color: yellow;
     }
 `  
     document.head.appendChild(style);//appending the style elements to the overall webpage of the whole site
@@ -74,5 +77,8 @@ export function initialise(currentPage) {
      console.log("the icon is showing");
 
     console.log("Menu is workingggg broooo!");//for my own piece of mind , i have this showing to prove its working .
+
+
+    
 };
 

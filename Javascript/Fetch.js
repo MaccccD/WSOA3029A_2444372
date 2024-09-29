@@ -1,5 +1,4 @@
 const phishingUrl = 'https://phishstats.info/';
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
 const requestOptions = {
     method: 'GET',
@@ -9,7 +8,7 @@ const requestOptions = {
    
 };
 
-fetch(proxyUrl + phishingUrl, requestOptions)
+fetch(phishingUrl, requestOptions)
   .then(response => response.json())
   .then(data => {
       console.log(data);

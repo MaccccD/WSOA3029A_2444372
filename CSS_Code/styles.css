@@ -18,6 +18,11 @@ p {
     margin: 0 auto;
     padding: 0 10px; 
   }
+#Phishing {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
 .btn {
     background-color: yellow;
     border: none; 
