@@ -8,7 +8,7 @@ Buttons.forEach(button => {
 
 //About page Btns section:
      if(button.classList.contains("prev0")){
-        window.location.href = "/index.html";
+        window.location.href = "../index.html";
      }
      else if(button.classList.contains("next0")){
         window.location.href = "../Design/Design.html";
