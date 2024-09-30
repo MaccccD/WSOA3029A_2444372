@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {//callback initialiati
          localStorage.setItem("nickName", nameInput);
          header.textContent = "";
          console.log("nickname input received and stored:" + nameInput);
-         animateHeaderText(`Hey ${nameInput}, glad your are here. Welcome to the Hakcing World.`);
+         animateHeaderText(`Hey ${nameInput}, glad your are here. Welcome to the Hacking World.`);
         }
         else{
             console.log("no nickname was provided by the user :" + nameInput);
