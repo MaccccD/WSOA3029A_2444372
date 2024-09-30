@@ -54,7 +54,7 @@ Buttons.forEach(button => {
         window.location.href = "../Visualizations/Phishing.html";
      }
      else if(button.classList.contains("next5")){
-        window.location.href = "/index.html";
+        window.location.href = "../index.html";
      }
 
     });
