@@ -1,18 +1,10 @@
-const ransomURL = 'https://api.ransomware.live/';
+const ransomURL = 'https://api.ransomware.live/allcyberattacks';
+// this API contains datat about different cybersecurity attacks done on different victims of the world by IP address and different ransomware attacks
 
-const requestOptions = {
-    method: 'GET',
-    headers: {
-        'Accept': 'application/json'
-    },
-   
-};
-
-fetch(ransomURL, requestOptions)
+fetch(ransomURL)
   .then(response => response.json())
   .then(data => {
       console.log(data);
-      createPhishingVisualizations(data);
       console.log(" work, plsss!");
   });
 
