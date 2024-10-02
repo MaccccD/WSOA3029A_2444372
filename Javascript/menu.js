@@ -3,7 +3,7 @@ const menuItemss = [
     { name: "Home", href:  root + "/index.html"},
     { name: "About", href: `${root}/About/About.html`},
     { name: "Design", href: `${root}/Design/Design.html`},
-    { name: "StylesGuide", href: `${root}/Design/StyleGuide.html`},
+    { name: "Styles", href: `${root}/Design/StyleGuide.html`},
     { name: "Theory", href: `${root}/Theory/Insights.html`},
     { name: "Phishing", href: `${root}/Visualizations/Phishing.html`},
     { name: "Ransomware", href: `${root}/Visualizations/Ransomware.html`},
@@ -58,15 +58,20 @@ export function initialise(currentPage) {
     table.appendChild(tr)
     nav.appendChild(table);
     
-
+    
     const style = document.createElement("style");//adding the CSS element here to "style" the way my navigation row spacially look like with each other
     style.textContent = `
     td {
-        padding: 20px; 
-        text-align: right;
+        width: 110px;
     }
-    a:hover{
-        color: yellow;
+    a {
+    text-decoration: none; 
+    white-space: nowrap; 
+    display: inline-block;
+    }
+    a:hover 
+    {
+    text-decoration: none; 
     }
 `  
     document.head.appendChild(style);//appending the style elements to the overall webpage of the whole site

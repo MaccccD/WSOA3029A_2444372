@@ -1,14 +1,25 @@
+* {
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif   !important;
+}
 header {
     display: flex;
     justify-content: space-between; /* here im ensurring that  logo is on the left, nav on the right */
     align-items: center; 
     padding: 10px;
-   
+}
+.image {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 10px; 
 }
 .low {
     display: flex; /* Using a flexbox to align the images side by side */
     flex-wrap: wrap; 
     gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 figure {
     margin: 0; 
@@ -18,6 +29,7 @@ p {
     margin: 0 auto;
     padding: 0 10px; 
   }
+  
 #Phishing {
     max-width: 1200px;
     margin: 0 auto;
@@ -34,14 +46,26 @@ p {
     cursor: pointer;
     transition: background-color 0.3s ease; 
 }
-.btns {
+.btns  {
     background-color: white;
     border-radius: 12px;
     padding: 10px 20px;
     display: inline-block;
+    cursor: pointer;
 }
 .btns:hover {
     background-color: forestgreen;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.prev0, .next0,.prev1, .next1, .prev2, .next2, .prev3, .next3, .prev4 , .next4, .prev5, .next5 {
+    flex: 0 0 auto; 
 }
 .btn a {
     color: white; 
@@ -66,10 +90,6 @@ nav {
     justify-content: flex-end;
 }
 
-* {
-    background-color: black;
-    font-family: Arial, Helvetica, sans-serif;
-}
 .Welcome {
     color: white;
     justify-content: center;
@@ -81,9 +101,15 @@ nav {
 }
 .heading {
     color: white;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 10px; 
 }
 .section {
     color: white;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 10px;
 }
 .strong {
     color: #FF7700;
@@ -93,11 +119,22 @@ nav {
 }
 
 .index {
-    color: green;
-    border: white;
-    padding: 10px;
+    color: lime;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    text-align: center;
+    background-color: black; /* Dark background for contrast */
+    padding: 10px 0; 
+    z-index: 1000;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); 
 }
 
+body {
+    margin: 0;
+    padding-bottom: 60px;
+}
 /* styles for the menu and hamburger icon */
 .hamburger {
     display: none; 
@@ -145,6 +182,7 @@ nav {
     }
 
     td {
+        padding: 20px;
         display: flex;
         width: 100%;
         text-align: center;
