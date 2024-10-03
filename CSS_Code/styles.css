@@ -9,21 +9,29 @@ header {
     padding: 10px;
 }
 .image {
-    max-width: 1200px; 
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 40px; 
+    justify-content: center; 
+    margin: 0 auto; 
+    max-width: 100%; 
     padding: 0 10px; 
 }
 .low {
-    display: flex; /* Using a flexbox to align the images side by side */
+    display: flex;
     flex-wrap: wrap; 
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 10px;
+    gap: 40px; 
+    justify-content: center; 
+    margin: 0 auto; 
+    max-width: 100%; 
+    padding: 0 20px; 
 }
 figure {
     margin: 0; 
 }
+figcaption{
+    color: #A0A0A0;
+  }
 p {
     max-width: 1200px; /* what causes the text top be centered*/
     margin: 0 auto;
@@ -36,7 +44,7 @@ p {
     padding: 0 10px;
 }
 .btn {
-    background-color: yellow;
+    background-color: green;
     border: none; 
     border-radius: 12px; /* Adding  rounded edges to maked it look more appealing to the eye */
     padding: 10px 20px; 
@@ -73,7 +81,7 @@ p {
 }
 
 .btn:hover {
-    background-color: orange; 
+    background-color: yellow; 
 }
 
 .btn a:hover {
