@@ -44,6 +44,7 @@ fetch(phishingUrl)
         .call(d3.axisBottom(xScale))
         .selectAll("text")
         .style("fill", "white")
+        .style("font-size", "10px")
         .attr("transform", "rotate(-90)")
         .style("text-anchor", "end")       
         .attr("dy", "-0.5em")              
@@ -56,7 +57,7 @@ fetch(phishingUrl)
            .attr("x", width / 2) //placing the label in the centre of the axis
            .attr("y", height + 190)  //space between the label and the axis
            .style("fill", "white")  
-           .style("font-size", "16px")  
+           .style("font-size", "18px")  
            .text("URLs by Host Name");
 
 
@@ -116,7 +117,7 @@ fetch(phishingUrl)
         // Legend setup in here :
         const legend = svg.append("g")
             .attr("class", "legend")
-            .attr("transform", `translate(${width - 245}, ${-10})`); //movimg it further left so all the legend Data displays properly
+            .attr("transform", `translate(${width - 257}, ${-10})`); //movimg it further left so all the legend Data displays properly
 
         // Define the legend data
         const legendData = [
@@ -124,54 +125,60 @@ fetch(phishingUrl)
             { color: "orange", label: "Moderate dangerous phishing URL", threshold: 1800000 },
             { color: "blue", label: "Least dangerous phishing URL", threshold: 500000 }
         ];
+       // Append legend labels
+       legend.selectAll("text")
+       .data(legendData)
+       .enter().append("text")
+       .attr("x", 26)
+       .attr("y", (d, i) => i * 30 + 5)
+       .style("fill", "white")
+       .text(d => d.label);
+
+
+       //Legend Title 
+       legend.append("text") 
+             .attr("x", 20) 
+             .attr("y", -30) 
+             .attr("text-anchor", "middle")
+             .attr("font-size", "14px")
+             .attr("font-style", "italic")
+             .attr("font-weight", "bold")
+             .style("fill", "white")
+             .text("Key : ")
+
+
 
         // Append legend buttons
-        legend.selectAll("circle")
+        legend.selectAll("rect")
             .data(legendData)
-            .enter().append("circle")
-            .attr("cx", 0)
-            .attr("cy", (d, i) => i * 25)
-            .attr("r", 8)
+            .enter().append("rect")
+            .attr("x", 0)
+            .attr("y", (d, i) => i * 25) 
+            .attr("width", 25)
+            .attr("height", 15) 
+            .attr("rx", 6) // Rounded corners (horizontal radius)
+            .attr("ry", 6) // Rounded corners (vertical radius)
+            .attr("class", "legend-btn")
             .style("fill", d => d.color)
             .style("cursor", "pointer")
             .on("click", (event, d) => {
-                // Filter bars based on the danger level. This is jst a hierarchy system i have developed to showacse which phishings sites are more dangerous than others
+                legend.selectAll(".legend-btn")
+                .style("fill", d => d.color);
+
+                //Each btn clic unique functionality :
+                d3.select(event.currentTarget)
+                .style("fill", d.color);
+                // Filter bars based on the danger level. This is jst a color-co-ordinated  hierarchy system i have developed to showcase which phishing sites via url are more dangerous than others, hence they have more no. of victims than others.
                 svg.selectAll(".bar")
                     .transition() // allows for ease switch between each button clicked
                     .duration(500)
                     .attr("fill", bar => {
-                        if(bar.id > 2000000) return "red";// only the most dangerous , thus the highest bars will have this color on them 
-                        if(bar.id === 1870615) return "orange"; // moderate dangeours activity
-                        if(bar.id === 1898011) return "orange";
-                        if(bar.id === 1898527) return "orange";
-                        if(bar.id === 1967482) return "orange";
-                        if(bar.id === 6695) return "blue"; //otherwise the color is blue if the bars "url" id is under 500k
-                    });
+                    if (d.color === "red" && bar.id > 2000000) return "red"; // Highlight most dangerous
+                    if (d.color === "orange" && [1870615, 1898011, 1898527, 1967482].includes(bar.id)) return "orange"; // Moderate dangerous
+                    if (d.color === "blue" && bar.id < 500000) return "blue"; // Least dangerous
+                    return "grey"; // Default color for all other bars
+                });
             });
-
-
-        // Append legend labels
-        legend.selectAll("text")
-            .data(legendData)
-            .enter().append("text")
-            .attr("x", 10)
-            .attr("y", (d, i) => i * 27 + 5)
-            .style("fill", "white")
-            .text(d => d.label);
-
-
-          //Legend Title 
-          legend
-          .append("text") 
-          .attr("x", 0) 
-          .attr("y", -20) 
-          .attr("text-anchor", "middle")
-          .attr("font-size", "14px")
-          .attr("font-style", "italic")
-          .attr("font-weight", "bold")
-          .style("fill", "white")
-          .text("Key : ")
-
     })
     .catch(error => console.error("Error fetching data:", error));
 
