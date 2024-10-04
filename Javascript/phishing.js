@@ -140,8 +140,11 @@ fetch(phishingUrl)
                     .transition() // allows for ease switch between each button clicked
                     .duration(500)
                     .attr("fill", bar => {
-                        if (bar.id > 2000000) return "red";// only the most dangerous , thus the highest bars will have this color on them 
-                        if (bar.id === 1870615 && 1898011 && 1898527 && 1967482) return "orange"; // moderate dangeours activity
+                        if(bar.id > 2000000) return "red";// only the most dangerous , thus the highest bars will have this color on them 
+                        if(bar.id === 1870615) return "orange"; // moderate dangeours activity
+                        if(bar.id === 1898011) return "orange";
+                        if(bar.id === 1898527) return "orange";
+                        if(bar.id === 1967482) return "orange";
                         if(bar.id === 6695) return "blue"; //otherwise the color is blue if the bars "url" id is under 500k
                     });
             });
