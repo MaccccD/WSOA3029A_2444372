@@ -73,7 +73,8 @@ p {
 }
 
 .prev0, .next0,.prev1, .next1, .prev2, .next2, .prev3, .next3, .prev4 , .next4, .prev5, .next5 {
-    flex: 0 0 auto; 
+    flex: 0 0 auto;
+    color: black; 
 }
 .btn a {
     color: white; 
