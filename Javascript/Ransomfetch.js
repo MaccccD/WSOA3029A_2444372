@@ -1,7 +1,6 @@
 const ransomURL = 'https://api.ransomware.live/recentvictims';
-
 //this API contains data about different cybersecurity attacks done on different victims of the world by IP address and different ransomware attacks.
-
+//Used this script just to test the APi 
 fetch(ransomURL)
   .then(response => response.json())
   .then(data => {

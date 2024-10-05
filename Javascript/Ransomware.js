@@ -1,4 +1,4 @@
-// Victim data (hardcoded for now bc the API im using does not show this info. I then researcjed and foun similar ransomgroups with this data below whici diecided to put as an array)
+// Victim data (hardcoded for now bc the API im using does not show this info. I then researched and found similar ransomgroups with this data below which decided to put as an array:)
 const victimData = [
     { group_name: "monti", value: 526, color: "red" },
     { group_name: "ransomhub", value: 376, color: "orange" },
@@ -17,6 +17,8 @@ const victimData = [
     { group_name: "cactus", value: 90, color: "cyan" },
     { group_name: "Other", value: 1265, color: "violet" }
 ];
+
+
 
 // Total number of victims
 const totalVictims = d3.sum(victimData, d => d.value);
@@ -70,8 +72,19 @@ const margin = { top: 90, right: 30, bottom: 100, left: 70 },
             // Draw the pie chart
             drawPieChart(victimData);
             createButtons(victimData);
+            createButtonsTitle();
         });
 
+
+       //this function is for the title of the ransomware groups buttons:
+    function createButtonsTitle(){
+    d3.select("#title-and-buttons")
+    .insert("h1", "#buttons")
+    .text("Ransomware Perpetrator Groups : ")
+    .style("font-size", "22px")
+    .style("color", "white")
+    .style("text-align", "centre");
+};
     // Function to draw the pie chart
     function drawPieChart(data) {
         const arcs = svg.selectAll("arc")// arc defines the shape of the pie same as how rect define the shape of the bars in my prev viz
@@ -119,8 +132,7 @@ const margin = { top: 90, right: 30, bottom: 100, left: 70 },
              const percentage = ((d.data.value / totalVictims) * 100).toFixed(1);
              return percentage > 1 ? `${percentage}%` : ""; // Only show for percentages > 3%
     });
-}
-
+};
     // Create buttons for each group_name
     function createButtons(data) {
         data.forEach(group => {
@@ -143,8 +155,9 @@ const margin = { top: 90, right: 30, bottom: 100, left: 70 },
                     .attr("transform", "scale(1.1)"); 
             });
     });
-}
+};
 
+//styling the tooltip:
     const tooltip = d3.select("body")
     .append("div")
     .style("position", "absolute")
@@ -155,12 +168,4 @@ const margin = { top: 90, right: 30, bottom: 100, left: 70 },
     .style("color", "white")
     .style("cursor", "pointer")
     .style("opacity", 0);
-
-// In the hover function above, you can set the HTML for the tooltip:
-tooltip.html(`<strong>Ransom Group:</strong> ${d.data.group_name}<br>
-              <strong>Victims:</strong> ${d.data.value}<br>
-              <strong>Ransomware disguised Activity:</strong> ${d.data.activity}<br>
-              <strong>Website:</strong> ${d.data.website}`);
-
   
-      

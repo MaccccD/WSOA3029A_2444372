@@ -8,7 +8,7 @@ const margin = { top: 90, right: 30, bottom: 100, left: 70 },
     width = 800 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
-// Create the SVG element: 
+//Create the SVG element: 
 const svg = d3.select("#Phishing")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -16,19 +16,19 @@ const svg = d3.select("#Phishing")
     .append("g") // Grouping  similar elements together
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-// Seting  up scales. For the x-axis, since im making a bar chart , as opposed to using scale Linear, Im  gonna use "scaleBand" bc Band scales are typically used for bar charts with an ordinal or categorical dimension.
+//Setting  up scales. For the x-axis, since im making a bar chart , as opposed to using scale Linear, I'm  gonna use "scaleBand" bc Band scales are typically used for bar charts with an ordinal or categorical dimension.
 const xScale = d3.scaleBand().range([0, width]).padding(0.5); //for the x-axis 
 const yScale = d3.scaleLinear().domain([0, 3000000]).range([height, 0]); //for the y-axis
 
-// Append the y-axis
+//Append the y-axis
 svg.append("g")
   .call(d3.axisLeft(yScale)
-  .tickFormat(d3.format("d")))
+  .tickFormat(d3.format("d"))) // this just to remve the commas within the numbers bc they did not scale properly
   .selectAll("text") // Target all text within the axis
   .style("fill", "white") // Correctly apply white text color
   .style("font-size", "12px");
 
-// Fetch the data from the API  and processing  it:
+//Fetch the data from the API  and processing  it:
 fetch(phishingUrl)
     .then(response => response.json())
     .then(data => {
@@ -38,7 +38,7 @@ fetch(phishingUrl)
         // Update the xScale domain to be the 10 URLs
         xScale.domain(limitedData.map(d => d.host));
 
-        // Append x-axis:
+        //Append x-axis:
         svg.append("g")
         .attr("transform", `translate(0, ${height})`)
         .call(d3.axisBottom(xScale))
@@ -50,7 +50,7 @@ fetch(phishingUrl)
         .attr("dy", "-0.5em")              
         .attr("dx", "-0.9em");
 
-        // Append x-axis label :
+        //Append x-axis label :
         svg.append("text")
            .attr("class", "x-axis-label")
            .attr("text-anchor", "middle")
@@ -74,7 +74,7 @@ fetch(phishingUrl)
         .text("Number of victims by Id in each Phishing URL Host Name");
 
 
-        // adding chart Title
+        //adding chart Title
         svg
         .append("text")
         .attr("id", "title")
@@ -114,18 +114,19 @@ fetch(phishingUrl)
                 d3.select("#tooltip").style("display", "none");
             });
 
-        // Legend setup in here :
+        //Legend setup in here :
         const legend = svg.append("g")
             .attr("class", "legend")
             .attr("transform", `translate(${width - 257}, ${-10})`); //movimg it further left so all the legend Data displays properly
 
-        // Define the legend data
+        //Define the legend data
         const legendData = [
             { color: "red", label: "Most dangerous phishing URL", threshold: 2000000 },
             { color: "orange", label: "Moderate dangerous phishing URL", threshold: 1800000 },
             { color: "blue", label: "Least dangerous phishing URL", threshold: 500000 }
         ];
-       // Append legend labels
+
+       //Append legend labels
        legend.selectAll("text")
        .data(legendData)
        .enter().append("text")
@@ -183,9 +184,15 @@ fetch(phishingUrl)
     .catch(error => console.error("Error fetching data:", error));
 
 // Tooltip styling where im adding the id element dynamically on here as opposed to through the html
-d3.select("body").append("div").attr("id", "tooltip").style("position", "absolute").style("display", "none").style("background-color", "black") // Set background color to grey
-.style("color", "white") // Set text color to white
-.style("padding", "10px")
-.style("border-radius", "8px");
+   d3.select("body")
+     .append("div")
+     .attr("id", "tooltip")
+     .style("position", "absolute")
+     .style("display", "none")
+     .style("background-color", "black") 
+     .style("color", "white") 
+     .style("padding", "10px")
+     .style("border-radius", "8px");
+
   
       

@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {//callback initialiati
         }
         function showHeaderTxt() {
             if (index < text.length) {
-                header.textContent += text.charAt(index);//increasing the number of letters by one  as they are getting spelled.
-                index++; // incrementss by 1 letter 
+                header.textContent += text.charAt(index);//increasing the number of letters by one  as they are getting spelled out one by one to form  the full name.
+                index++; // incrementss the number ofletter getting spelled by 1 to complete the full set of letters
                 setTimeout(showHeaderTxt, 200); 
             }
         }

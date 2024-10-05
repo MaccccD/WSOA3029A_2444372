@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-// this code here is for the navigation btns i have across all pages to allow easier traversal of the sight.
+// this code here is for the navigation btns i have across all pages to allow easier traversal of the site.
 const Buttons  = document.querySelectorAll(".btns");
 
 Buttons.forEach(button => {
     button.addEventListener("click",(event) =>{
-     event.preventDefault();
+     event.preventDefault(); // this is prevent the page from reloading by default
 
 //About page Btns section:
      if(button.classList.contains("prev0")){
@@ -12,7 +12,7 @@ Buttons.forEach(button => {
      }
      else if(button.classList.contains("next0")){
         window.location.href = "../Design/Design.html";
-     }
+     };
      
 
     //Design page  btns section:
@@ -21,7 +21,7 @@ Buttons.forEach(button => {
     }
     else if (button.classList.contains("next1")){
         window.location.href =  "../Design/StyleGuide.html";
-    }
+    };
 
     //Styles guide page btns section:
     if(button.classList.contains("prev2")){
@@ -29,7 +29,7 @@ Buttons.forEach(button => {
      }
      else if(button.classList.contains("next2")){
         window.location.href = "../Theory/Insights.html";
-     }
+     };
 
 
     //Theory page btns section: 
@@ -38,7 +38,7 @@ Buttons.forEach(button => {
      }
      else if(button.classList.contains("next3")){
         window.location.href = "../Visualizations/Phishing.html";
-     }
+     };
 
     //Phishing page btns section:
     if(button.classList.contains("prev4")){
@@ -46,7 +46,7 @@ Buttons.forEach(button => {
      }
      else if(button.classList.contains("next4")){
         window.location.href = "../Visualizations/Ransomware.html";
-     }
+     };
 
 
     //Ransomware page btns section:
@@ -55,7 +55,7 @@ Buttons.forEach(button => {
      }
      else if(button.classList.contains("next5")){
         window.location.href = "../index.html";
-     }
+     };
 
     });
     console.log("yesss, it workssss across  all pages!")

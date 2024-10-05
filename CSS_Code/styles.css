@@ -20,7 +20,8 @@ header {
 .low {
     display: flex;
     flex-wrap: wrap; 
-    gap: 40px; 
+    gap: 40px;
+    border-radius: 100px; 
     justify-content: center; 
     margin: 0 auto; 
     max-width: 100%; 
@@ -32,22 +33,31 @@ figure {
 figcaption{
     color: #A0A0A0;
   }
-p {
-    max-width: 1200px; /* what causes the text top be centered*/
+.section {
+    color: white;
+    max-width: 1200px; 
     margin: 0 auto;
-    padding: 0 10px; 
-  }
-  
+    padding: 0 10px;
+} 
 #Phishing {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 10px;
 }
+a {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 10px; 
+    color: #FFC300;
+}
+a:hover{
+    color: limegreen;
+}
 .btn {
     background-color: green;
     border: none; 
     border-radius: 12px; /* Adding  rounded edges to maked it look more appealing to the eye */
-    padding: 10px 20px; 
+    padding: 15px 25px; 
     text-align: center;
     display: inline-block;
     font-size: 18px;
@@ -77,7 +87,7 @@ p {
     color: black; 
 }
 .btn a {
-    color: white; 
+    color: yellow; 
     text-decoration: none; 
 }
 
@@ -114,12 +124,7 @@ nav {
     margin: 0 auto;
     padding: 0 10px; 
 }
-.section {
-    color: white;
-    max-width: 1200px; 
-    margin: 0 auto;
-    padding: 0 10px;
-}
+
 .strong {
     color: #FF7700;
 }
