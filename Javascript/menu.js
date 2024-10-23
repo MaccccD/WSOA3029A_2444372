@@ -58,23 +58,6 @@ export function initialise(currentPage) {
     table.appendChild(tr)
     nav.appendChild(table);
     
-    
-    const style = document.createElement("style");//adding the CSS element here to "style" the way my navigation row spacially look like with each other
-    style.textContent = `
-    td {
-        width: 110px;
-    }
-    a {
-    text-decoration: none; 
-    white-space: nowrap; 
-    display: inline-block;
-    }
-    a:hover 
-    {
-    text-decoration: none; 
-    }
-`  
-    document.head.appendChild(style);//appending the style elements to the overall webpage of the whole site
 
      // Attach the toggle functionality to the hamburger icon
      const hamburger = document.getElementById("hamburger");
@@ -82,8 +65,6 @@ export function initialise(currentPage) {
      console.log("the icon is showing");
 
     console.log("Menu is workingggg broooo!");//for my own piece of mind , i have this showing to prove its working .
-
-
     
 };
 

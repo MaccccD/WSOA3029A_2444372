@@ -20,14 +20,14 @@ document.addEventListener("DOMContentLoaded", function() {//callback initialiati
     if(nickName){// in here im checking if the users name is saved in my local storrage 
         header.textContent = ""; //if yess, then it just updates the text using the type writer effect 
        // console.log("Nickname has been found :" + nickName);
-        animateHeaderText(`Hey ${nickName}, glad you are here. Welcome to the Hacking World.`);
+        animateHeaderText(`Hey ${nickName}, we're glad you're here. Welcome to the hacking world-a place where web development meets insightful data visualizations.`);
     } else{//if its the users first time(no), then they put in their nick name and its updates and welcome them into my world , xD!
         const nameInput = prompt("Heyyy Userrrr, Thanks for choosing this website, Please enter your nickname");
         if(nameInput){
          localStorage.setItem("nickName", nameInput);
          header.textContent = "";
          console.log("nickname input received and stored:" + nameInput);
-         animateHeaderText(`Hey ${nameInput}, glad your are here. Welcome to the Hacking World.`);
+         animateHeaderText(`Hey ${nameInput}, glad your are here. Welcome to the Hacking World, a place where web development meets thoughtful data Visualizations`);
         }
         else{
             console.log("no nickname was provided by the user :" + nameInput);

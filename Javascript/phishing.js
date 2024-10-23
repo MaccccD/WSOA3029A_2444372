@@ -4,7 +4,7 @@ const phishingUrl = 'https://phishstats.info:2096/api/phishing?_where=(ip,eq,1.1
 
 
 // Setting  up margins and dimensions for the SVG element. I wanted to use Inner Width and Inner height considering the theme of my site but it kidn of did not scale properly
-const margin = { top: 90, right: 30, bottom: 100, left: 70 },
+const margin = { top: 90, right: 60, bottom: 100, left: 70 },
     width = 800 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
@@ -81,11 +81,11 @@ fetch(phishingUrl)
         .attr("x", (width / 2))
         .attr("y", 0 - (margin.top / 1.2))
         .attr("text-anchor", "middle")
-        .attr("font-size", "14px")
+        .attr("font-size", "20px")
         .attr("font-style", "italic")
         .attr("font-weight", "bold")
         .style("fill", "white")
-        .text("The relationship between different phishing scams and the number of victims that have fallen for them.");
+        .text("Title: Different phishing scams and the number of victims that have fallen for them.");
 
 
         // Creating the actual bars:
