@@ -38,6 +38,8 @@ figcaption{
     max-width: 1200px; 
     margin: 0 auto;
     padding: 0 10px;
+    margin-top: 30px;
+    margin-bottom: 300px; 
 } 
 #Phishing {
     max-width: 1200px;
@@ -130,6 +132,7 @@ nav {
 }
 .Description-text {
     color: white;
+    margin-bottom: 300px; 
 }
 
 .index {
