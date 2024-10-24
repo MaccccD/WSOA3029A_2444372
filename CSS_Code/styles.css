@@ -53,10 +53,10 @@ h1 {
     gap: 40px;
     border-radius: 100px; 
     justify-content: center; 
-    margin: 0 auto; 
-    max-width: 100%; 
-    padding: 0 20px; 
+    padding: 0 10px; 
     margin-top: 20px;
+    margin: 0 auto;
+    
 }
 figure {
     margin: 0; 
@@ -66,7 +66,7 @@ figcaption{
   }
 .section {
     color: ivory;
-    max-width: 1200px; 
+    max-width: 1000px; 
     margin: 0 auto;
     padding: 0 10px;
     margin-top: 50px;
@@ -75,14 +75,19 @@ figcaption{
 } 
 .section1 {
     color: ivory;
-    max-width: 1200px; 
+    max-width: 1000px; 
     margin: 0 auto;
     padding: 0 10px;
     margin-top: 30px;
     margin-bottom: 10px; 
 }
 #Phishing {
-    max-width: 1200px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+#Ransomware {
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -161,7 +166,7 @@ a:hover{
 
 .heading {
     color: ivory;
-    max-width: 1200px; 
+    max-width: 1000px; 
     margin: 0 auto;
     padding: 0 10px;
     margin-top: 120px; 

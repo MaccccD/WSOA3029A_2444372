@@ -142,7 +142,7 @@ const margin = { top: 90, right: 30, bottom: 100, left: 70 },
             .style("background-color", group.color)  // Set button color based on slice color
             .style("color", "black")
             .style("border", "none")
-            .style("padding", "10px 15px")
+            .style("padding", "10px")
             .style("font-size", "14px")
             .style("border-radius", "8px")
             .style("cursor", "pointer")
