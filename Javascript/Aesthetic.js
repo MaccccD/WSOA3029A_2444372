@@ -38,5 +38,5 @@ function addMessage() {
   }
 }
 
-// Add a new message every 5 second and store the interval ID
-const messageInterval = setInterval(addMessage, 5000);
+// Add a new message every 2 second and store the interval ID
+const messageInterval = setInterval(addMessage, 2000);
