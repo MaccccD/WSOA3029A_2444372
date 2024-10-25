@@ -33,7 +33,38 @@ a:hover
    text-decoration: none; 
 }
 body {
-    padding-bottom: 60px;
+    margin: 0;
+    padding: 0;
+    color: limegreen;
+    font-family: 'Courier New', Courier, monospace;
+}
+.terminal {
+    padding: 20px;
+    height: 100vh;
+    width: 100%;
+    background: rgba(20, 17, 17); /* Slight transparency */
+    color: limegreen;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    white-space: pre-wrap; /* Makes text auto-wrap on new lines */
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+.terminal span {
+    display: block; /* Each message appears on a new line */
+}
+.terminal::after {
+    content: '_';
+    display: inline-block;
+    animation: blink 1s steps(1) infinite;
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
 }
 h1 {
     margin-top: 130px;
