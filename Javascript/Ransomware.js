@@ -34,7 +34,7 @@ const margin = { top: 90, right: 30, bottom: 100, left: 70 },
     radius = Math.min(width, height) / 2 - margin.top;
 
     // Create the SVG element. I'm making a 2d pie chart and so these margins are the ones immma use.
-    const svg = d3.select("#Ransomware")
+    const svg = d3.select("#ransomware")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)

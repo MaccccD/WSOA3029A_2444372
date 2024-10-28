@@ -16,6 +16,15 @@ header {
     /* Subtle drop shadow */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
+h1 {
+    margin-top: 130px;
+}
+.Welcome {
+    color: ivory;
+    justify-content: center;
+    display: flex;
+    padding: 80px;
+}
 nav {
     display: flex;
     justify-content: flex-end;
@@ -28,6 +37,9 @@ a {
    white-space: nowrap; 
    display: inline-block;
 }
+.External {
+    background-color: #333;
+}
 a:hover 
 {
    text-decoration: none; 
@@ -38,7 +50,7 @@ body {
     color: limegreen;
     font-family: 'Courier New', Courier, monospace;
 }
-.terminal {
+.Terminal {
     padding: 20px;
     height: 100vh;
     width: 100%;
@@ -50,10 +62,10 @@ body {
     max-width: 1000px; 
     margin: 0 auto;
 }
-.terminal span {
+.Terminal span {
     display: block; /* Each message appears on a new line */
 }
-.terminal::after {
+.Terminal::after {
     content: '_';
     display: inline-block;
     animation: blink 1s steps(1) infinite;
@@ -66,19 +78,47 @@ body {
       opacity: 0;
     }
 }
-h1 {
-    margin-top: 130px;
-}
-.image {
+  /* Container styling */
+  .infoContainer {
+    width: 400px;
+    height: 550px;
+    background-color: #333; /* Charcoal grey */
+    color: ivory;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; 
+  }
+  .infoContainer:hover {
+    transform: scale(1.03);
+  }
+  /* Flex container inside the section html element*/
+  section {
     display: flex;
     flex-wrap: wrap; 
-    gap: 40px; 
+    gap: 30px;
+    border-radius: 100px; 
     justify-content: center; 
-    margin: 0 auto; 
-    max-width: 100%; 
     padding: 0 10px; 
-}
-.low {
+    margin: 0 auto;
+  }
+
+  /*  ReadMoreButton styling */
+  .readMore {
+    margin-top: auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: ivory;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .readMore:hover {
+    background-color: green;
+  }
+.Images {
     display: flex;
     flex-wrap: wrap; 
     gap: 40px;
@@ -87,7 +127,13 @@ h1 {
     padding: 0 10px; 
     margin-top: 20px;
     margin: 0 auto;
-    
+}
+.Titles {
+    background-color: #333; /* Charcoal grey */
+    color: ivory;
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 0 10px;
 }
 figure {
     margin: 0; 
@@ -95,7 +141,7 @@ figure {
 figcaption{
     color: #A0A0A0;
   }
-.section {
+.Section {
     color: ivory;
     max-width: 1000px; 
     margin: 0 auto;
@@ -104,7 +150,7 @@ figcaption{
     margin-bottom: 30px; 
     line-height: 1.8;
 } 
-.section1 {
+.Section1 {
     color: ivory;
     max-width: 1000px; 
     margin: 0 auto;
@@ -112,12 +158,22 @@ figcaption{
     margin-top: 30px;
     margin-bottom: 10px; 
 }
-#Phishing {
+.Description {
+    background-color: #333;
+    color: ivory;
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 0 10px;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    line-height: 1.8;
+}
+#phishing {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 10px;
 }
-#Ransomware {
+#ransomware {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 10px;
@@ -131,7 +187,7 @@ a {
 a:hover{
     color: limegreen;
 }
-.btn {
+.Btn {
     background-color: green;
     border: none; 
     border-radius: 12px; /* Adding  rounded edges to maked it look more appealing to the eye */
@@ -142,60 +198,35 @@ a:hover{
     cursor: pointer;
     transition: background-color 0.3s ease; 
 }
-.btns  {
+.Btns  {
     background-color: white;
     border-radius: 12px;
     padding: 10px 20px;
     display: inline-block;
     cursor: pointer;
 }
-.btns:hover {
+.Btns:hover {
     background-color: forestgreen;
 }
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-}
 
-.prev0, .next0,.prev1, .next1, .prev2, .next2, .prev3, .next3, .prev4 , .next4, .prev5, .next5 {
-    flex: 0 0 auto;
-    color: black; 
-}
-.btn a {
+.Btn a {
     color: #00FFFF; 
     text-decoration: none; 
 }
 
-.btn:hover {
+.Btn:hover {
     background-color: green; 
 }
 
-.btn a:hover {
+.Btn a:hover {
     color: limegreen;
 }
 
-#Logo {
+#logo {
     display: flex;
     align-items: center;
 }
-.Welcome {
-    color: ivory;
-    justify-content: center;
-    display: flex;
-    padding: 100px;
-}
-.description {
-    color: ivory;
-    max-width: 1200px; 
-    margin: 0 auto;
-    padding: 0 10px; 
-    margin-bottom: 30px; 
-}
-
-.heading {
+.Heading {
     color: ivory;
     max-width: 1000px; 
     margin: 0 auto;
@@ -203,17 +234,10 @@ a:hover{
     margin-top: 120px; 
 }
 
-.strong {
+.Strong {
     color: rgb(54, 69, 79);
 }
-.Description-text {
-    color: ivory;
-    margin-bottom: 300px;
-    max-width: 1200px; 
-    margin: 0 auto;
-    padding: 0 10px; 
-}
-.index {
+.Index {
     color: lime;
     position: relative;
     text-anchor: end;
@@ -228,7 +252,7 @@ a:hover{
     margin-top: 290px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
 }
-.index1 {
+.Index1 {
     color: lime;
     position: relative;
     text-anchor: end;
@@ -244,7 +268,7 @@ a:hover{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
 }
 /* styles for the menu and hamburger icon */
-.hamburger {
+.Hamburger {
     display: none; 
     font-size: 30px;
     cursor: pointer;
@@ -260,7 +284,7 @@ nav {
 
 /* Mobile-specific styles */
 @media (max-width: 768px) {
-    .hamburger {
+    .Hamburger {
         display: block; /* Show hamburger on mobile */
         position: relative;
         top: 10px;

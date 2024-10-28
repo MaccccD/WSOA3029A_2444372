@@ -1,15 +1,14 @@
-/* Style for the loading screen */
+
 #loading-screen {
-    font-size: 50px;             /* Size of the hourglass */
-    color: #444;                 /* Color of the hourglass */
+    font-size: 50px;             
+    color: #444;                
     display: flex;              
     justify-content: center;
     align-items: center;
     height: 50vh;              
-    background-color: rgba(0, 0, 0, 0.1); /* Light transparent background */
+    background-color: rgba(0, 0, 0, 0.1); 
 }
 
-/* Animation keyframes for 360-degree anti-clockwise rotation */
 @keyframes rotate-hourglass {
     0% {
         transform: rotate(0deg);   
@@ -19,7 +18,7 @@
     }
 }
 
-/* Applying the animation to the hourglass icon */
+
 #loading-screen {
     animation: rotate-hourglass 60s linear infinite; /* 2 seconds per rotation */
 }

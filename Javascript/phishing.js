@@ -9,7 +9,7 @@ const margin = { top: 90, right: 60, bottom: 100, left: 70 },
     height = 600 - margin.top - margin.bottom;
 
 //Create the SVG element: 
-const svg = d3.select("#Phishing")
+const svg = d3.select("#phishing")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom + 100)
