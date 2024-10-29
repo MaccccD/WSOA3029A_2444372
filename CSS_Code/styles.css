@@ -46,7 +46,7 @@ a {
     margin-top: 150px;
     max-width: 1000px;
     width: 300px;
-    height: 470px;
+    height: 370px;
     background-color: #333; /* Charcoal grey */
     color: ivory;
     padding: 20px;
@@ -55,7 +55,22 @@ a {
     transition: transform 0.3s ease; 
 }
 .Link:hover {
-    transform: scale(1.05);
+    transform: scale(1.04);
+}
+.Linking {
+    margin-top: 130px;
+    max-width: 1000px;
+    width: 300px;
+    height: 370px;
+    background-color: #333; /* Charcoal grey */
+    color: ivory;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; 
+}
+.Linking:hover {
+    transform: scale(1.03);
 }
 a:hover 
 {
@@ -174,6 +189,42 @@ body {
   }
   .Styles:hover {
     background-color: #035603;
+  }
+  .Essays {
+    width: 150px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: #2503FD;
+    color: ivory;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .Essays:hover {
+    background-color: #035603;
+  }
+  .Scroll {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    background-color: rgb(20, 17, 17); ;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .Scroll:hover{
+    background-color: #035603;
+  }
+  .ScrollIcon {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
   }
   
 .Images {
@@ -299,7 +350,8 @@ a:hover{
     max-width: 1000px; 
     margin: 0 auto;
     padding: 0 10px;
-    margin-top: 120px; 
+    margin-top: 110px; 
+
 }
 
 .Strong {
@@ -333,7 +385,7 @@ a:hover{
     padding: 10px 0; 
     z-index: 1000;
     margin-top: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);  
 }
 /* styles for the menu and hamburger icon */
 .Hamburger {
