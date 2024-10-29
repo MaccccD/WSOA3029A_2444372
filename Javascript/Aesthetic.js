@@ -1,7 +1,7 @@
 const terminal = document.getElementById('terminal');
 
 const codelines = [
-    "The following lines of code  are supposed to give you a feel of being inside a hacking terminal :",
+    "The following 'lines of code'  are supposed to give you a feel of being inside a hacking terminal :",
     "Access Denied!!",
     "Initializing Phishing Attack...",
     "Phishing Attack Successful....",
