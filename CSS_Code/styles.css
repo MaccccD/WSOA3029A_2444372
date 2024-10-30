@@ -359,6 +359,7 @@ a:hover{
 .Index {
     color: lime;
     position: relative;
+    font-size: 0.9em;
     text-anchor: end;
     left: 0;
     bottom: 0;
