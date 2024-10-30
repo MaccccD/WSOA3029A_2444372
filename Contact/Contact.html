@@ -37,7 +37,6 @@
          initialise("Contact") 
      </script>
       <script src="../Javascript/Hourglass.js"></script>
-     <script src="../Javascript/Contact.js"></script>
       <link href="../CSS_Code/Contact.css" rel="stylesheet"> 
        <link href="../CSS_Code/Loading.css" rel="stylesheet">
       <link href="../CSS_Code/styles.css" rel="stylesheet"> 
@@ -69,6 +68,30 @@
         <div id="loading-screen">
             ⌛
         </div>
+        <div>
+            <button class="Scroll">
+                <img src="../Images/Scroll.png" alt="Scroll to top Img" class="ScrollIcon">
+            </button>
+        </div>
+        <script src="../Javascript/Scroll.js"></script>
+
+
+        <div class="Form-container">
+            <form class="Contact">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+    
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+    
+                <button type="submit" id="submitBtn" disabled>Submit</button>
+            </form>
+            <p id="feedback"></p>
+        </div>
+        <script src="../Javascript/Contact.js"></script>
     </main>
 
 

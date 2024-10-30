@@ -1,0 +1,40 @@
+.Form-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 190px;
+    margin-bottom: 50px;
+}
+.Contact {
+    display: flex;
+    flex-direction: column;
+}
+label, input, textarea {
+    margin-bottom: 10px;
+    max-width: 1000px;
+    color: ivory;
+}
+input, textarea {
+    color: ivory;
+    font-size: 20px;
+    background-color: #333;
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 15px;
+}
+button{
+    width: 90px;
+    height: 50px;
+    background-color: #2503FD;
+    color: ivory;
+    border-radius: 20px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #035603;
+}
+#feedback{
+    color: ivory;
+    font-size: 20px;
+    margin-top: 20px;
+}

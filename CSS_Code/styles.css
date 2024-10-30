@@ -226,7 +226,6 @@ body {
     object-fit: cover;
     border-radius: 10px;
   }
-  
 .Images {
     display: flex;
     flex-wrap: wrap; 
