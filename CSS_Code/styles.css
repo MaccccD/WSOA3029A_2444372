@@ -357,9 +357,14 @@ a:hover{
     margin: 0 auto;
     margin-top: 110px; 
 }
+.Sub-heading {
+    color: #0095F8;
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
 .Strong {
-    color: rgb(54, 69, 79);
+    color: #0095F8;
 }
 .Index {
     color: lime;
