@@ -3,6 +3,7 @@ const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const phoneNumberInput = document.getElementById("phone-number");
 const phoneWarning = document.getElementById("phone-warning");
+const messageWarning = document.getElementById("message-warning");
 const messageInput = document.getElementById("message");
 const submitBtn = document.getElementById("submitBtn");
 const feedbackMsg = document.getElementById("feedback");
@@ -10,7 +11,7 @@ const feedbackMsg = document.getElementById("feedback");
 
 function validateForm() {
     // required fields validation:
-    if (nameInput.value && emailInput.value && messageInput.value) {
+    if (nameInput.value && emailInput.value) {
         submitBtn.disabled = false; // btn will  work if the required fileds are fully filled in
     } else {
         submitBtn.disabled = true; // btn will not  work  if the required fields are not filled in 
@@ -19,12 +20,22 @@ function validateForm() {
     //phone number validation 
     if(phoneNumberInput.validity.patternMismatch || phoneNumberInput.value.length < 10){
         phoneWarning.style.display = "inline";
-        phoneWarning.innerText = "Please enter a valid 10-digit phone number"
+        phoneWarning.innerText = "Please enter a valid 10-digit phone number.";
     }
     else{
         phoneWarning.style.display = "none";
     }
-
+    //message validation 
+    messageInput.addEventListener("input", () =>{
+        if(messageInput.value.length >= 200) {
+            messageWarning.style.display = "inline";
+            messageWarning.innerText = "Please limit your message to 200 characters.";
+        }
+        else{
+            messageWarning.style.display = "none"; // hide it if the message is within the limit 
+        }
+    })
+    
     //email validity 
     if(!emailInput.validity.valid){
         emailInput.setCustomValidity("Please enter an email with the correct extension: either '@gmail.com or @icloud.com'");
@@ -51,7 +62,7 @@ contactForm.addEventListener("submit", (event) => {
     }
     //phone number input  alidity check
     if(phoneNumberInput.validity.patternMismatch || phoneNumberInput.value.length < 10 ){
-        alert ("Please fill in a 10-digit number");
+        alert ("Please fill in a 10-digit number.");
     }
 
     // Save data to local storage
