@@ -246,6 +246,11 @@ body {
     max-width: 1000px; 
     margin: 0 auto;
 }
+.Chart {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
 .Titles {
     background-color: #333; /* Charcoal grey */
     color: ivory;
@@ -254,8 +259,10 @@ body {
     padding: 0 10px;
 }
 figure {
-    margin: 0; 
+    max-width: 1000px;
+    margin: 0 auto; 
 }
+
 figcaption{
     color: #A0A0A0;
   }
@@ -265,7 +272,7 @@ figcaption{
     margin: 0 auto;
     padding: 0 10px;
     margin-top: 50px;
-    margin-bottom: 30px; 
+    margin-bottom: 10px; 
     line-height: 1.8;
 } 
 .Section1 {
@@ -358,6 +365,8 @@ a:hover{
     margin-top: 110px; 
 }
 .Sub-heading {
+    margin-top: 80px;
+    padding: 15px;
     color: #0095F8;
     max-width: 1000px;
     margin: 0 auto;
