@@ -58,7 +58,7 @@ a {
     transform: scale(1.04);
 }
 .Linking {
-    margin-top: 130px;
+    margin-top: 92px;
     max-width: 1000px;
     width: 300px;
     height: 370px;
@@ -132,7 +132,7 @@ body {
     gap: 30px;
     border-radius: 100px; 
     justify-content: center; 
-    padding: 0 10px; 
+    padding: 0 5px; 
     margin: 0 auto;
   }
 
@@ -348,9 +348,14 @@ a:hover{
     color: ivory;
     max-width: 1000px; 
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 0 5px;
     margin-top: 110px; 
-
+}
+.Intro {
+    color: ivory;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 110px; 
 }
 
 .Strong {

@@ -41,9 +41,9 @@ export function initialise(currentPage) {
         const a = document.createElement("a");
         a.innerText = menuItem.name;
         a.setAttribute("href", menuItem.href);
+        
 
-
-        if (window.location.pathname.includes(menuItem.href)) { // if the url of the current window matches the url of the menu Item , the color should change to green 
+        if (( menuItem.name === "Design" & window.location.pathname.includes ("/Design/"))||window.location.pathname.includes(menuItem.href)) { // if the url of the current window matches the url of the menu Item , the color should change to green 
             a.style.color = "limegreen"; // Set the active page link to green
         } else {
             a.style.color = "white"; // Default color for other links
