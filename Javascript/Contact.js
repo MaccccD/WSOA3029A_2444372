@@ -49,9 +49,10 @@ contactForm.addEventListener("submit", (event) => {
         alert("Please fill in all the required fields!"); // Alert if any field is empty
         return; // Stop the function if fields are not completed
     }
-
-
-    
+    //phone number input  alidity check
+    if(phoneNumberInput.validity.patternMismatch || phoneNumberInput.value.length < 10 ){
+        alert ("Please fill in a 10-digit number");
+    }
 
     // Save data to local storage
     localStorage.setItem("name", nameInput.value);
