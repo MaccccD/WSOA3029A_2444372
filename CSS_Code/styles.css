@@ -413,16 +413,78 @@ a:hover{
     cursor: pointer;
     color: ivory;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 /* Default nav styles */
 nav {
     display: flex;
     justify-content: flex-end;
     background-color: black;
 }
+.Sidebar {
+    position: fixed;
+    top: 20px;
+    left: 16px;
+    width: 200px;
+    background-color: #292626;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 80px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.Sidebar::before { /*pseudo-element*/
+    content: "HACKINGGGG!";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 255, 0, 0.3),
+        rgba(0, 255, 0, 0.3) 1.5px,
+        transparent 3px,
+        transparent 4px
+    );
+    background-size: 100% 100%;
+    animation: scrollingCode 80s linear infinite;
+    pointer-events: none; /* Allows you to interact with the sidebar without issues */
+    opacity: 0.9; /* Controls how visible the code overlay is */
+    z-index: 1; /* Positions overlay above content but below any other elements */
+}
 
+@keyframes scrollingCode {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+.Sidebar-content {
+    position: relative;
+    z-index: 2; 
+}
+.Sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+.Sidebar li {
+    margin: 8px 0;
+}
+.Sidebar a {
+    text-decoration: wavy;
+    color: #0095F8;
+    font-weight: bold;
+    font-size: 11.5px
+}
+.Sidebar a:hover{
+    color: #077b07;
+}
 /* Mobile-specific styles */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .Hamburger {
         display: block; /* Show hamburger on mobile */
         position: relative;
@@ -458,7 +520,9 @@ nav {
         width: 100%;
         text-align: center;
     }
-
+    .Sidebar{
+        display: none;
+    }
     a {
         color: ivory;
         text-decoration: none;
