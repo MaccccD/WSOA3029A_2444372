@@ -7,6 +7,8 @@ document.querySelectorAll(".Sidebar a").forEach(anchor =>{
     window.scrollTo({
         top: target.offsetTop - 20,
         behavior: "smooth"
+        
     });
     });
+
 });
