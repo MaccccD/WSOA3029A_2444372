@@ -121,9 +121,9 @@ fetch(phishingUrl)
 
         //Define the legend data
         const legendData = [
-            { color: "red", label: "Most dangerous phishing URL", threshold: 2000000 },
-            { color: "orange", label: "Moderate dangerous phishing URL", threshold: 1800000 },
-            { color: "blue", label: "Least dangerous phishing URL", threshold: 500000 }
+            { color: "red", label: "Most dangerous phishing URL (Red)", threshold: 2000000 },
+            { color: "orange", label: "Moderate dangerous phishing URL(Orange)", threshold: 1800000 },
+            { color: "blue", label: "Least dangerous phishing URL (Blue)", threshold: 500000 }
         ];
 
        //Append legend labels

@@ -1,5 +1,5 @@
 * {
-    background-color:  rgb(20, 17, 17);
+    background-color:  rgb(20, 17, 17); /* Smoky Black as opposed to pure black*/
     font-family: Arial, Helvetica, sans-serif   !important;
 }
 header {
@@ -406,6 +406,19 @@ a:hover{
     margin-top: 50px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);  
 }
+.Icons {
+    margin-bottom: 15px;
+}
+.Icons a img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+.Icons a img:hover {
+    transform: scale(1.2);
+}
 /* styles for the menu and hamburger icon */
 .Hamburger {
     display: none; 
@@ -490,6 +503,16 @@ nav {
         position: relative;
         top: 10px;
         right: 40px;
+    } 
+    .Icons {
+        display: flex;
+        justify-content: center;
+        gap: 7px;
+    }
+    .Icons a img {
+        vertical-align: baseline;
+        width: 30px;
+        height: 30px;
     }
 
     nav {
