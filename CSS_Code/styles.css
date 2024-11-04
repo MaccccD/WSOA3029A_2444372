@@ -33,10 +33,13 @@ td {
     width: 110px;
 }
 a {
-   text-decoration: none; 
-   white-space: nowrap; 
-   display: inline-block;
-   gap: 50px;
+    text-decoration: none; 
+    white-space: nowrap; 
+    display: inline-block;
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 0 10px; 
+    color: #00FFFF;
 }
 .External {
     background-color: #333;
@@ -303,12 +306,7 @@ figcaption{
     margin: 0 auto;
     padding: 0 10px;
 }
-a {
-    max-width: 1200px; 
-    margin: 0 auto;
-    padding: 0 10px; 
-    color: #00FFFF;
-}
+
 a:hover{
     color: limegreen;
 }
@@ -356,7 +354,7 @@ a:hover{
     max-width: 1000px; 
     margin: 0 auto;
     padding: 0 5px;
-    margin-top: 110px; 
+    margin-top: 105px; 
 }
 .Intro {
     color: ivory;

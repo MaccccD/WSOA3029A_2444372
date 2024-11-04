@@ -42,6 +42,7 @@
       <script src="https://cdn.jsdelivr.net/npm/d3-scale-chromatic@3.0.0/dist/d3-scale-chromatic.min.js"></script>
       <link href="../CSS_Code/styles.css" rel="stylesheet"> 
       <link href="../CSS_Code/Loading.css" rel="stylesheet">
+      <link href="../CSS_Code/PhishingSim.css" rel="stylesheet">
       <title>Dumziii's Phishing Scams Page</title>
 </head>
 <body>
@@ -75,7 +76,24 @@
             </button>
         </div>
         <script src="../Javascript/Scroll.js"></script>
+        <script src="../Javascript/PhishingSim.js"></script>
 
+
+        <div id="phishing-simulation">
+            <h1 class="Heading">Phishing Simulation: </h1>
+            <p class="Section">Click the link below to experience how phishing works:</p>
+            <a class="Dodgy-link" href="http://freewebdownload-001-site1.dtempurl.com/inst-jv-" target="_blank" id="dodgy-link">Important: Confirm Your Email for Security Purposes</a>
+            <p id="warning-message" class="Hidden">
+                <strong>Warning:</strong> You’ve clicked on a suspicious link! This is exactly how phishing attacks can start. 
+                Black Hat Hackers  leverage language that people commonly see in real email verifications, making it 
+                easy to assume it is a "safe" link and that it is "harmless".
+                Let’s dive deeper into how phishing works.
+            </p>
+        </div>
+
+
+        <!-- Phishing Explanation Section (hidden by default) -->
+        <div id="phishing-explanation" class="Hidden">
         <h1 class="Heading"><u>Cyber-Attack : Phishing</u></h1>
         
         <article>
@@ -103,10 +121,10 @@
                 </p>
             </section>
         </article>
-       
         <section id="phishing"></section>
     
-        </section>
+        </div>
+        
         <script src="../Javascript/phishing.js"></script>
 
   
