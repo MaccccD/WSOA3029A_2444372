@@ -1,82 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta property="og:locale" content="en_US">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:description" content="Dumziii's collection of academic work, Visualizations centered around Hacking and more">
-    <meta property="og:type" content="Navigation">
-    <meta property="article:author" content="Dumziii Mofolo">
-    <meta property="og:title" content="Cybersecurity: A deep dive into the world of hacking. Essay 1 Page"> 
-    <meta property ="og: keywords" content=
-          "Dumziii,
-           Dumisani, 
-           Mofolo,
-           Visualizations, 
-           Hacking, 
-           ransomware,
-           phishing,
-           cyberattacks,
-           Essays,
-          ">
- <!--In here , I'm just applying some form of Structured Data so that search engines 
-     like Google could potentially bring up this website when these key words are typed in the search bar-->
-    <script type="application/id+json"> ==$0
-     {
-         "@context": "https://schema.org/" ,
-         "@type": "WebPage: Ransomware and phishing Visualizations" ,
-         "headline": "Dumziii's  Hacking Visualizations",
-         "author": [{
-         "@type": "Person",
-         "name": "Dumisani Mofolo",
-         "description": "Data Visualizations about hacking around the world" ,
- 
-          "URL": "https://maccccd.github.io/WSOA3029A_2444372/"}]
-     } 
-     </script>
-     <script type="module"> import { initialise } from "../Javascript/menu.js"
-         initialise("Theory") 
-     </script>
-      <script src="../Javascript/Hourglass.js"></script>
-      <script src="../Javascript/SmoothNav.js"></script>
-      <link href="../CSS_Code/Loading.css" rel="stylesheet">
-      <link href="../CSS_Code/styles.css" rel="stylesheet"> 
-      <title>Dumziii's Essay 1 Page</title>
-</head>
-<body>
-    <main>
-        <header> 
-            <div id="logo">
-                <a href="../index.html">
-                <figure>
-                 <img src="../Images/Hacked Image.jpg" alt="Logo" title="Go to Home" width="70px" height="70px" style="border-radius: 50%;">
-                </figure>
-                </a>
-             </div>
-    
-             <!-- Hamburger Icon -->
-        <div class="Hamburger" id="hamburger">
-            <ion-icon name="menu-outline"></ion-icon>
-             </div>
-    
-            <nav>
-               
-            </nav>
-            
-        </header> <!--the header tag ends here-->
-     
-        <div id="loading-screen">
-            ⌛
-        </div>
-        <div>
-            <button class="Scroll">
-                <img src="../Images/Scroll.png" alt="Scroll to top Img" class="ScrollIcon">
-            </button>
-        </div>
-        <script src="../Javascript/Scroll.js"></script>
-        <div id="essayContainer">
-            <script src="../Javascript/DynamicRead.js"></script>
-        <!-- <article>
+const essayContent = 
+`<article>
             <h1 class="Heading" id="title1"><u>Exploring how interactive visualizations, combined with marrative elements, contribute to(or detract from) the communication of complex information.</u></h1>
 
             <section>
@@ -313,7 +236,7 @@
                     <br>
                     Zhao, Z. &. E. N. (2022). The Stories We Tell About Data: Media Types for Data-Driven Storytelling. arXiv.org ed. Ithaca: Cornell University Library.
                 </p>
-            </section>
+                  </section>
         </article>
         <div class="Sidebar">
             <div class="Sidebar-content">
@@ -333,38 +256,6 @@
 
         <section>
             <a href="../Theory/Essay2.html"><button class="Essays">Essay 2 →</button></a>
-        </section> -->
+        </section> -->`
 
-        </div>
-
-
-
-
-
-
-
-
-
-
-        <footer class="Index1">
-            <div class="Icons">
-                <a href="https://www.behance.net/dumziimacmofolo" target="_blank">
-                   <img src="../Images/Behance Icon.png" alt="Behance Icon">
-                </a>
-                <a href="https://www.linkedin.com/in/dumi-mofolo-314071296/" target="_blank">
-                   <img src="../Images/Linked In Icon.png" alt="Linked-In Logo">
-                </a>
-                <a href="https://github.com/MaccccD" target="_blank">
-                   <img src="../Images/Github Icon.png" alt="Github Logo">
-                </a>
-                <a href="mailto:2444372@students.wits.ac.za" target="_blank">
-                   <img src="../Images/Email Iconn.jpg" alt="Email logo">
-                </a>
-               </div>
-        <span> Brought to you  by<em> Dumziii Mofolo </em>2024: Copyright ©. All rights  reserved.</span>
-        </footer>
-        <!-- Hamburger Icons for mobile devices linking-->
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
-</html>
+                const essayContainer = document.getElementById("essayContainer").innerHTML = essayContent;
