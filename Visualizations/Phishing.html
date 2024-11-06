@@ -123,11 +123,23 @@
         </article>
         <section id="phishing"></section>
     
-        </div>
+        
         
         <script src="../Javascript/phishing.js"></script>
+        <script src="../Javascript/PhishingQuiz.js"></script>
 
-  
+
+        <!-- setting up the container for the mini quiz game to test users understanding-->
+        <div id="phishing-quiz" class="Quiz-container">
+            <h2 class="Heading">Quiz Time: Can you Spot the Phish? Test yourself below :</h2>
+            <p id="question"></p>
+            <div id="choices"></div>
+            <button id="next-btn" onclick="nextQuestion()">Next:</button>
+            <p id="feedback"></p>
+        </div>
+
+
+        </div>
     
             <p class="Section">
             References :
