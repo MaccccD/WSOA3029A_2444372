@@ -25,6 +25,7 @@ h1 {
     display: flex;
     padding: 80px;
 }
+
 nav {
     display: flex;
     justify-content: flex-end;

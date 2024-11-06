@@ -1,0 +1,10 @@
+
+#matrixCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* making sure that i hve ta at the back so it doesnt affect my other stuff/functionality */
+    pointer-events: none;
+}
