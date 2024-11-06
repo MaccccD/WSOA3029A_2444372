@@ -256,6 +256,6 @@ const essayContent =
 
         <section>
             <a href="../Theory/Essay2.html"><button class="Essays">Essay 2 →</button></a>
-        </section> -->`
+        </section>`
 
                 const essayContainer = document.getElementById("essayContainer").innerHTML = essayContent;
