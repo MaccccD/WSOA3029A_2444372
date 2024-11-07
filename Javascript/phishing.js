@@ -9,7 +9,7 @@ const margin = { top: 90, right: 60, bottom: 100, left: 70 },
 const svg = d3.select("#phishing")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom + 100)
+    .attr("height", height + margin.top + margin.bottom + 120)
     .append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
@@ -75,7 +75,7 @@ async function fetchData() {
             .attr("y", -50)
             .attr("dx", "1em")
             .style("fill", "white")
-            .style("font-size", "14px")
+            .style("font-size", "15px")
             .text("Number of victims by Id in each Phishing URL Host Name");
 
         // Draw the bars
