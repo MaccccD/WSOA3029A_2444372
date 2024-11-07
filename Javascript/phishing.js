@@ -87,8 +87,8 @@ async function fetchData() {
             .attr("y", d => yScale(d.id))
             .attr("width", xScale.bandwidth())
             .attr("height", d => height - yScale(d.id))
-            .attr("fill", d =>{
-                if (d.id > 2000000) return "red"; // Most dangerous 
+            .attr("fill", d =>{ // basically applying eahc color to each specifc id range so thats its eaiser for users to undeerstand the different levels of danger based on color feedback
+                if (d.id > 2000000) return "red"; // Most dangerous URL
                 if (d.id >= 1800000 && d.id <= 2000000) return "orange"; // Moderate dangerous
                 if (d.id < 500000) return "blue"; // Least dangerous
                 return "grey"; // Default color if not matching any category 

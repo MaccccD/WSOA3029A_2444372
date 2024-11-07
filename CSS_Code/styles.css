@@ -25,7 +25,10 @@ h1 {
     display: flex;
     padding: 80px;
 }
-
+#text {
+    color: green;
+    font: 15px;
+}
 nav {
     display: flex;
     justify-content: flex-end;
