@@ -277,7 +277,7 @@ figcaption{
     padding: 0 10px;
     margin-top: 50px;
     margin-bottom: 10px; 
-    line-height: 1.8;
+    line-height: 2.0;
 } 
 .Section1 {
     color: ivory;
@@ -287,6 +287,7 @@ figcaption{
     margin-top: 30px;
     margin-bottom: 10px; 
 }
+
 .Description {
     background-color: #333;
     color: ivory;
@@ -400,6 +401,7 @@ a:hover{
     max-width: 1000px;
     margin: 0 auto;
 }
+
 
 .Strong {
     color: #0095F8;
