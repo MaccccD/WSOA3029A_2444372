@@ -545,7 +545,9 @@ nav {
         width: 30px;
         height: 30px;
     }
-
+    .Section {
+        max-width: 90%;
+    }
     nav {
         display: none; /* Hide navigation on mobile by default */
         position: absolute;
