@@ -241,6 +241,7 @@ const essayContent =
         <div class="Sidebar">
             <div class="Sidebar-content">
             <ul>
+              <li>Table of Contents</li>
               <li><a href="#title1">Introduction</a></li>
               <li><a href="#title2">1. Case Study Exposition</a></li>
               <li><a href="#title3">2. Data Visualization Techniques</a></li>
