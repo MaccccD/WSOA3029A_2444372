@@ -138,7 +138,7 @@ fetch(phishingUrl)
 
        //Legend Title 
        legend.append("text") 
-             .attr("x", 20) 
+             .attr("x", 15) 
              .attr("y", -30) 
              .attr("text-anchor", "middle")
              .attr("font-size", "14px")
@@ -166,10 +166,10 @@ fetch(phishingUrl)
                 legend.selectAll(".legend-btn")
                 .style("fill", d => d.color);
 
-                //Each btn clic unique functionality :
+                //Each btn click unique functionality :
                 d3.select(event.currentTarget)
                 .style("fill", d.color);
-                // Filter bars based on the danger level. This is jst a color-co-ordinated  hierarchy system i have developed to showcase which phishing sites via url are more dangerous than others, hence they have more no. of victims than others.
+                // Filter bars based on the danger level. This is just a color-co-ordinated  hierarchy system i have developed to showcase which phishing sites via url are more dangerous than others, hence they have more no. of victims than others.
                 svg.selectAll(".bar")
                     .transition() // allows for ease switch between each button clicked
                     .duration(500)
@@ -178,6 +178,14 @@ fetch(phishingUrl)
                     if (d.color === "orange" && [1870615, 1898011, 1898527, 1967482].includes(bar.id)) return "orange"; // Moderate dangerous
                     if (d.color === "blue" && bar.id < 500000) return "blue"; // Least dangerous
                     return "grey"; // Default color for all other bars
+                })
+                .attr("transform", bar => {
+                    // Zoom-in effect if bar matches the selected color
+                    const isMatching = 
+                        (d.color === "red" && bar.id > 2000000) ||
+                        (d.color === "orange" && [1870615, 1898011, 1898527, 1967482].includes(bar.id)) ||
+                        (d.color === "blue" && bar.id < 500000);
+                    return isMatching ? "scale(1)" : "scale(1)";
                 });
             });
     })

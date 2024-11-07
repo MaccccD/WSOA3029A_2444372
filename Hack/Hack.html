@@ -36,7 +36,10 @@
      <script type="module"> import { initialise } from "../Javascript/menu.js"
          initialise("Hack") 
      </script>
+      <script src="../Javascript/ThreatMap.js" defer></script>
       <script src="../Javascript/Hourglass.js"></script>
+      <script src="https://d3js.org/d3.v7.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/d3-scale-chromatic@3.0.0/dist/d3-scale-chromatic.min.js"></script>
       <link href="../CSS_Code/Loading.css" rel="stylesheet">
       <link href="../CSS_Code/styles.css" rel="stylesheet"> 
 
@@ -67,10 +70,17 @@
         <div id="loading-screen">
             ⌛
         </div>
+        <div>
+            <button class="Scroll">
+                <img src="../Images/Scroll.png" alt="Scroll to top Img" class="ScrollIcon">
+            </button>
+        </div>
+        <script src="../Javascript/Scroll.js"></script>
 
 
-
-
+        <section id="phishingStats">
+            
+        </section>
 
 
 
@@ -84,10 +94,22 @@
 
 
         <footer class="Index">
-            
+            <div class="Icons">
+                <a href="https://www.behance.net/dumziimacmofolo" target="_blank">
+                   <img src="../Images/Behance Icon.png" alt="Behance Icon">
+                </a>
+                <a href="https://www.linkedin.com/in/dumi-mofolo-314071296/" target="_blank">
+                   <img src="../Images/Linked In Icon.png" alt="Linked-In Logo">
+                </a>
+                <a href="https://github.com/MaccccD" target="_blank">
+                   <img src="../Images/Github Icon.png" alt="Github Logo">
+                </a>
+                <a href="mailto:2444372@students.wits.ac.za" target="_blank">
+                   <img src="../Images/Email Iconn.jpg" alt="Email logo">
+                </a>
+               </div>
         <span> Brought to you  by<em> Dumziii Mofolo </em>2024: Copyright ©. All rights  reserved.</span>
         </footer>
-        <script src="../Javascript/Buttons.js"></script>
         <!-- Hamburger Icons for mobile devices linking-->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
