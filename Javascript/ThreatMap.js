@@ -1,5 +1,4 @@
 const phishingStats = "https://phishstats.info:2096/api/phishing?_sort=-id";
-
 const width = 800;
 const height = 600;
 
@@ -17,8 +16,9 @@ const path = d3.geoPath().projection(projection);
 const tooltip = d3.select("#phishingStats")
     .append("div")
     .attr("class", "tooltip")
-    .style("opacity", 6);
+    .style("opacity", 0);
 
+// Fetch world map data and initialize
 d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(geoData => {
     svg.append("g")
         .selectAll("path")
@@ -30,14 +30,37 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
         .attr("stroke", "#333");
 
     createFilterToggles();
+    addResetZoomButton();
     fetchPhishingStatistics();
 });
 
 function createFilterToggles() {
-    d3.select("#filterOptions").html(`
-        <button onclick="filterData(24)">Last 24 Hours</button>
-        <button onclick="filterData(48)">Last 48 Hours</button>
-    `);
+    const filterDiv = d3.select("#filterOptions");
+
+   const last24Wrapper = filterDiv.append("div").attr("class", "Toggle-wrapper");
+last24Wrapper.append("label")
+    .attr("class", "toggle-label")
+    .text("Last 24 Hours")
+    .style("color", "blue");
+
+last24Wrapper.append("input")
+    .attr("type", "checkbox")
+    .attr("id", "last24Toggle")
+    .attr("class", "toggle-checkbox") // Add class for custom styling
+    .on("change", () => applyFilters());
+
+// Toggle for last 48 hours
+const last48Wrapper = filterDiv.append("div").attr("class", "Toggle-wrapper");
+last48Wrapper.append("label")
+    .attr("class", "toggle-label")
+    .text("Last 48 Hours")
+    .style("color", "orange");
+
+last48Wrapper.append("input")
+    .attr("type", "checkbox")
+    .attr("id", "last48Toggle")
+    .attr("class", "toggle-checkbox") // Add class for custom styling
+    .on("change", () => applyFilters());
 }
 
 // Fetch phishing data from the API
@@ -49,72 +72,95 @@ async function fetchPhishingStatistics() {
         const data = await response.json();
         window.phishingData = data;
 
-        // Render the full set of data (global data)
-        renderMapMarkers(window.phishingData, "all");
-
+        renderMapMarkers(window.phishingData);
     } catch (error) {
         console.error("Error fetching data:", error);
     }
 }
 
-// Filter data and render markers based on selected time range
-function filterData(hours) {
-    const filteredData = window.phishingData.filter(d => d.date_update && isRecent(d.date_update, hours));
-    renderMapMarkers(filteredData, `last ${hours} hours`);
+// Apply selected filters and update map markers
+function applyFilters() {
+    let filteredData = window.phishingData;
+
+    const last24Checked = d3.select("#last24Toggle").property("checked");
+    const last48Checked = d3.select("#last48Toggle").property("checked");
+
+    if (last24Checked) {
+        filteredData = filteredData.filter(d => isRecent(d.date_update, 24));
+        renderMapMarkers(filteredData, "blue");
+    } else if (last48Checked) {
+        filteredData = filteredData.filter(d => isRecent(d.date_update, 48));
+        renderMapMarkers(filteredData, "orange");
+    } else {
+        renderMapMarkers(filteredData, "red");
+    }
 }
 
 // Render map markers for phishing attacks
-function renderMapMarkers(data, label) {
+function renderMapMarkers(data, color = "red") {
     svg.selectAll("circle").remove(); // Clear existing markers
 
-    const attacksByCountry = d3.rollups(
-        data,
-        v => v.length,
-        d => d.countryname
-    );
+    data.forEach(d => {
+        if (d.latitude && d.longitude && d.countryname && d.id && d.url && d.date_update) {
+            const [x, y] = projection([+d.longitude, +d.latitude]);
 
-    attacksByCountry.forEach(([country, count]) => {
-        const coordinates = getCoordinates(country);
-        if (coordinates) {
             svg.append("circle")
-                .attr("cx", projection(coordinates)[0])
-                .attr("cy", projection(coordinates)[1])
-                .attr("r", Math.sqrt(count) * 2)
-                .attr("fill", label === "all" ? "#ff0000" : "#00ff00") // Color different for filtered vs all data
-                .attr("opacity", 0.7)
+                .attr("cx", x)
+                .attr("cy", y)
+                .attr("r", 6)
+                .attr("fill", color)
+                .attr("opacity", 0.8)
                 .attr("stroke", "#000")
+                .attr("class", color === "blue" || color === "orange" ? "blinking" : "")
                 .on("mouseover", function(event) {
-                    d3.select(this).transition().attr("r", Math.sqrt(count) * 2.5);
+                    d3.select(this).transition().attr("r", 7);
                     tooltip.transition().style("opacity", .9);
-                    tooltip.html(`Country: ${country}<br>Attacks: ${count}`)
-                        .style("left", (event.pageX + 10) + "px")
-                        .style("top", (event.pageY - 30) + "px");
+                    tooltip.html(`
+                        <strong>Country:</strong> ${d.countryname}<br>
+                        <strong>No. of Attacks:</strong> ${d.id}<br>
+                        <strong>URL:</strong> <a href="${d.url}" target="_blank">${d.url}</a><br>
+                        <strong>Date:</strong> ${new Date(d.date_update).toLocaleString()}
+                    `)
+                    .style("left", (event.pageX + 10) + "px")
+                    .style("top", (event.pageY - 30) + "px");
                 })
                 .on("mouseout", function() {
-                    d3.select(this).transition().attr("r", Math.sqrt(count) * 2);
+                    d3.select(this).transition().attr("r", 5);
                     tooltip.transition().style("opacity", 0);
+                })
+                .on("click", function() {
+                    zoomToLocation(+d.longitude, +d.latitude);
                 });
         }
     });
 }
 
-// Utility function to determine if the attack date is recent within a specified time range
+// Utility function to check if attack is recent
 function isRecent(dateString, hours) {
     const attackDate = new Date(dateString);
     const now = new Date();
-    const diff = (now - attackDate) / (1000 * 60 * 60); // Difference in hours
+    const diff = (now - attackDate) / (1000 * 60 * 60); // Convert ms to hours
     return diff <= hours;
 }
 
-// Sample function to map country names to approximate coordinates
-function getCoordinates(countryName) {
-    const countryCoords = {
-        "United States": [-98.5795, 39.8283],
-        "Brazil": [-51.9253, -14.2350],
-        "India": [78.9629, 20.5937],
-        "Germany": [10.4515, 51.1657],
-        "South Africa": [22.9375, -30.5595],
-        // Add more countries as needed...
-    };
-    return countryCoords[countryName] || null;
+// Zoom function and reset button
+function zoomToLocation(longitude, latitude) {
+    const [x, y] = projection([longitude, latitude]);
+    const zoomScale = 4;
+
+    svg.transition()
+        .duration(1000)
+        .attr("transform", `translate(${width / 2 - x * zoomScale}, ${height / 2 - y * zoomScale}) scale(${zoomScale})`);
+}
+
+function addResetZoomButton() {
+    d3.select("#phishingStats")
+        .append("button")
+        .text("Reset View")
+        .attr("id", "resetZoom")
+        .on("click", function() {
+            svg.transition()
+                .duration(1000)
+                .attr("transform", "translate(0,0) scale(1)");
+        });
 }

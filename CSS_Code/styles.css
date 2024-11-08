@@ -321,6 +321,101 @@ figcaption{
     margin: 0 auto;
     padding: 0 10px;
 }
+#filterOptions .toggle {
+    display: block;
+    margin-top: 40px;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.Toggle-wrapper{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+#filterOptions .toggle input[type="checkbox"] {
+    display: none;
+}
+
+#filterOptions .toggle input[type="checkbox"] + span {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+/* Unique colors for each toggle */
+#last24Toggle + span {
+    background: blue;
+    
+}
+#last48Toggle + span {
+    background: orange;
+}
+#filterOptions .toggle input[type="checkbox"]:checked + span {
+    background: #66bb6a;
+}
+
+#filterOptions .toggle span:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    transition: left 0.3s;
+}
+
+#filterOptions .toggle input[type="checkbox"]:checked + span:before {
+    left: 22px;
+}
+
+/* Blinking effect */
+.blinking {
+    animation: blink-animation 1.5s infinite;
+}
+
+@keyframes blink-animation {
+    50% {
+        opacity: 0;
+    }
+}
+
+#resetZoom {
+    width: 80px;
+    height: 50px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    right: 30px;
+    bottom: 30px;
+    background-color: #2503FD;
+    color: ivory;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+.tooltip {
+    position: absolute;
+    text-align: left;
+    width: auto;
+    height: auto;
+    padding: 6px;
+    font: 12px monospace;
+    color: ivory;
+    background:  #333;;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
 .Quiz-container {
     background-color: rgb(20, 17, 17);
     color: ivory;
@@ -356,18 +451,7 @@ figcaption{
     margin: 0 auto;
     padding: 0 10px;
 }
-.tooltip {
-    position: absolute;
-    text-align: center;
-    width: auto;
-    height: auto;
-    padding: 6px;
-    font: 12px sans-serif;
-    background: lightsteelblue;
-    border: 0px;
-    border-radius: 8px;
-    pointer-events: none;
-}
+
 #phishingStats {
     margin-top: 50px;
     width: 100%;
