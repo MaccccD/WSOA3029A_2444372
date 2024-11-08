@@ -212,6 +212,21 @@ body {
   .Essays:hover {
     background-color: #035603;
   }
+  .Stats {
+    width: 250px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: #2503FD;
+    color: ivory;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .Stats:hover {
+    background-color: #035603;
+  }
   .Scroll {
     display: none;
     position: fixed;
