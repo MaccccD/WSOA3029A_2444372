@@ -99,6 +99,7 @@ function applyFilters() {
 // Render map markers for phishing attacks
 function renderMapMarkers(data, color = "red") {
     svg.selectAll("circle").remove(); // Clear existing markers
+    svg.selectAll(".Magnify-icon").remove();// removing any prevous icons
 
     data.forEach(d => {
         if (d.latitude && d.longitude && d.countryname && d.id && d.url && d.date_update) {
@@ -116,21 +117,29 @@ function renderMapMarkers(data, color = "red") {
                     d3.select(this).transition().attr("r", 7);
                     tooltip.transition().style("opacity", .9);
                     tooltip.html(`
-                        <strong>Country:</strong> ${d.countryname}<br>
-                        <strong>No. of Attacks:</strong> ${d.id}<br>
-                        <strong>URL:</strong> <a href="${d.url}" target="_blank">${d.url}</a><br>
-                        <strong>Date:</strong> ${new Date(d.date_update).toLocaleString()}
-                    `)
-                    .style("left", (event.pageX + 10) + "px")
-                    .style("top", (event.pageY - 30) + "px");
-                })
-                .on("mouseout", function() {
-                    d3.select(this).transition().attr("r", 5);
-                    tooltip.transition().style("opacity", 0);
-                })
-                .on("click", function() {
-                    zoomToLocation(+d.longitude, +d.latitude);
-                });
+                        Country: ${d.countryname}<br>
+                        No.of Attacks: ${d.id}<br>
+                        URL: <a href="${d.url}" target="_blank">${d.url}</a><br>
+                        Date: ${new Date(d.date_update).toLocaleString()}<br>
+                        Location: Click to zoom in and see the actual location of this phishing attack`)
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 30) + "px");
+                     })
+                      .on("mouseout", function() {
+                      d3.select(this).transition().attr("r", 5);
+                      tooltip.transition().style("opacity", 0);
+                
+                     })
+                     .on("click", function() {
+                     zoomToLocation(+d.longitude, +d.latitude);
+                     });
+
+                      //addding the magnifiying glass icon to let users know they can zoom in :
+                      svg.append("text")
+                      .attr("x", x - 5)
+                      .attr("y", y)
+                      .attr("class", "Magnify-icon")
+                      .text("🔍");
         }
     });
 }

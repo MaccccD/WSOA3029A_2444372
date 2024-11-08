@@ -321,6 +321,21 @@ figcaption{
     margin: 0 auto;
     padding: 0 10px;
 }
+circle{
+    cursor: pointer;
+}
+/*  Okay so I added a magnifying glass icon next to each circle of a phishing attack to let users kow thwy can actually zoom in for the drill down feature*/
+.Magnify-icon {
+    position: absolute;
+    font-size: 20px;
+    color: steelblue;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+circle:hover + .Magnify-icon {
+    opacity: 4;
+}
 #filterOptions .toggle {
     display: block;
     margin-top: 40px;
