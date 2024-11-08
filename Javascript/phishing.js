@@ -17,8 +17,10 @@ const svg = d3.select("#phishing")
 const xScale = d3.scaleBand().range([0, width]).padding(0.5);
 const yScale = d3.scaleLinear().domain([0, 3000000]).range([height, 0]);
 
+
 // Async function to fetch data replacing the ".then"
 async function fetchData() {
+
     try {
         const response = await fetch(phishingUrl);
         const data = await response.json();
@@ -111,7 +113,7 @@ async function fetchData() {
           { color: "red", label: "Most dangerous phishing URL (Red)", threshold: 2000000 },
           { color: "orange", label: "Moderate dangerous URL (Orange)", threshold: 1800000 },
           { color: "blue", label: "Least dangerous URL (Blue)", threshold: 500000 }
-];
+           ];
 
          const legend = svg.append("g")
          .attr("class", "legend")
