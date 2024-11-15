@@ -1,6 +1,6 @@
 const essayContent = 
 `<article>
-            <h1 class="Heading" id="title1"><u>Exploring how interactive visualizations, combined with marrative elements, contribute to(or detract from) the communication of complex information.</u></h1>
+            <h1 class="Heading" id="title1"><u>Exploring how interactive visualizations, combined with marrative elements, contribute to (or detract from) the communication of complex information.</u></h1>
 
             <section>
                 <p class="Section">
@@ -184,7 +184,7 @@ const essayContent =
                 </p>
                 <p class="Section">
                       As shown in two figures above, the two characters’ different plot points and back story highlights the bias root of the risk scoring system and the detriment that has on their lives as fictional characters 
-                     as well as the actual recipients of the welfare in real life. (Kollias, 2023)
+                     as well as the actual recipients of the welfare in real life. <cite>(Kollias, 2023)</cite>
                 </p>
             </section>
 
